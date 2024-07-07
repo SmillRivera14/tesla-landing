@@ -2,33 +2,64 @@
 import Logo from "./Logo.astro";
 ---
 <header
-class="py-3 px-10 flex items-center fixed top-0 w-full justify-between z-40"
+  id="landing-header"
+  class="py-3 px-10 flex items-center fixed top-0 w-full justify-between z-40"
 >
-<div class="flex flex-grow basis-0 text-white">
-<Logo />
-</div>
+  <div class="flex flex-grow basis-0 text-current">
+    <Logo />
+  </div>
 
-<nav>
-  <ul
-    class="flex text-sm [&>li>a]:text-white [&>li>a]:font-medium [&>li>a]:inline-block [&>li>a]:px-4 [&>li>a]:py-2"
-  >
-    <li><a href="#">Model S</a></li>
-    <li><a href="#">Model 3</a></li>
-    <li><a href="#">Model X</a></li>
-    <li><a href="#">Model Y</a></li>
-    <li><a href="#">Model S Plait</a></li>
-    <li><a href="#">Cybertruck</a></li>
-  </ul>
-</nav>
+  <nav>
+    <ul
+      class="flex text-sm [&>li>a]:text-current [&>li>a]:font-medium [&>li>a]:inline-block [&>li>a]:px-4 [&>li>a]:py-2 [&>li>a]:transition-color [&>li>a]:duration-500"
+    >
+      <li><a href="#">Model S</a></li>
+      <li><a href="#">Model 3</a></li>
+      <li><a href="#">Model X</a></li>
+      <li><a href="#">Model Y</a></li>
+      <li><a href="#">Model S Plait</a></li>
+      <li><a href="#">Cybertruck</a></li>
+    </ul>
+  </nav>
 
-<nav class="flex flex-grow justify-end basis-0">
-  <ul
-    class="flex text-sm [&>li>a]:text-white [&>li>a]:font-medium [&>li>a]:inline-block [&>li>a]:px-4 [&>li>a]:py-2"
-  >
-    <li><a href="#">Soporte</a></li>
-    <li><a href="#">Tienda</a></li>
-    <li><a href="#">Cuenta</a></li>
-    <li><a href="#">Menu</a></li>
-  </ul>
-</nav>
+  <nav class="flex flex-grow justify-end basis-0">
+    <ul
+      class="flex text-sm [&>li>a]:text-current [&>li>a]:font-medium [&>li>a]:inline-block [&>li>a]:px-4 [&>li>a]:py-2 [&>li>a]:transition-color [&>li>a]:duration-500"
+    >
+      <li><a href="#">Soporte</a></li>
+      <li><a href="#">Tienda</a></li>
+      <li><a href="#">Cuenta</a></li>
+      <li><a href="#">Menu</a></li>
+    </ul>
+  </nav>
 </header>
+
+<script>
+  // IntersectionObserver
+  const header = document.querySelector('#landing-header');
+  const observerOptions = {
+    root: null, // default to the viewport (cuando entre al viewport)
+    rootMargin: '0px', // en cuanto se vea el elemento
+    threshold: 0.9 // porcentaje de visibilidad
+  };
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+      const { isIntersecting } = entry;
+      if (isIntersecting) {
+        const color = entry.target.getAttribute('data-header-color');
+        if (header) {
+          (header as HTMLElement).style.color = color;
+
+          // Actualizar todos los elementos que usan text-current
+          document.querySelectorAll('.text-current').forEach((el) => {
+            (el as HTMLElement).style.color = color;
+          });
+        }
+      }
+    });
+  }, observerOptions);
+
+  const sections = document.querySelectorAll(".landing-section");
+  sections.forEach((section) => observer.observe(section));
+</script>
