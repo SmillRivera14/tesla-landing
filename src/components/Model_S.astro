@@ -1,0 +1,35 @@
+---
+import Section from "./Section.astro";
+---
+
+<Section
+  color="white"
+  title="Model S"
+  subtitle="From $66,490"
+  subtitle2="Adter Est.Savings"
+  size="[24px]"
+  estilo="medium"
+>
+<div slot="footer" class="gap-x-4 flex mx-auto">
+  <a
+    class="border-[3px] border-white bg-white text-bold text-[#393c41] rounded font-sm px-12 py-2 inline-block hover:bg-[#e2e3e3] hover:border-[#e2e3e3] transition-colors duration-300"
+    href="#"
+  >
+    Order Now
+  </a>
+
+  <a
+    class="bg-black text-bold rounded font-medium text-white px-12 py-2 inline-flex justify-center items-center transition-colors hover:bg-[#393c41]"
+    href="#"
+  >
+    Demo Drive
+  </a>
+</div>
+
+  <img
+    slot="background"
+    src="Model_S.avif"
+    alt="Model_S"
+    class="h-full w-full object-cover object-center"
+  />
+</Section>
