@@ -1,0 +1,35 @@
+---
+import Section from "../components/Section.astro";
+---
+
+<Section
+  color="Black"
+  title="Model Y"
+  size="sm"
+  subtitle="Concertar una prueba de conducción"
+>
+  <div slot="footer" class="gap-x-4 flex mx-auto">
+    <a
+      class="border-[3px] border-[#222222] bg-[#222222] text-sm text-white rounded font-sm px-12 py-2 inline-block hover:bg-[#393c41] hover:border-[#393c41] transition-colors duration-300"
+      href="https://www.tesla.com/modely/design#overview"
+      target="_blank"
+    >
+      Explorar inventario
+    </a>
+
+    <a
+      class="bg-white text-sm rounded font-medium text-black px-12 py-2 inline-flex justify-center items-center transition-colors hover:bg-[#e2e3e3]"
+      href="https://www.tesla.com/inventory/new/my?arrangeby=savings&range=0"
+      target="_blank"
+    >
+      View Inventory
+    </a>
+  </div>
+
+  <img
+    slot="background"
+    src="/public/Model_y.avif"
+    alt="Model Y"
+    class="h-full w-full object-cover object-center"
+  />
+</Section>

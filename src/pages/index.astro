@@ -11,42 +11,43 @@ import Powerwall from "../components/Powerwall.astro";
 import Accessories from "../components/Accessories.astro";
 import Model_3 from "../components/Model_3.astro";
 import Cybertruck from "../components/Cybertruck.astro";
+import ModelY from "../components/Model-Y.astro";
 ---
 
 <Layout title="Tesla">
-	<LandingHeader />
-	<main
-		class="snap-y snap-mandatory relative w-full h-screen overflow-auto scroll"
-	>
-	<div class="snap-center w-full">
-		<Cybertruck />
-	</div>
-	<div class="snap-center w-full">
-		<Model_3 />
-	</div>
-	<div class="snap-center w-full">
-		<Accessories />
-	</div>
-	<div class="snap-center w-full">
-		<Powerwall />
-	</div>
-	<div class="snap-center w-full">
-		<SolarRoof />
-	</div>
-	<div class="snap-center w-full">
-		<SolarPanel />
-	</div>
-	<div class="snap-center w-full">
-		<Model_S />
-	</div>
-	<div class="snap-center w-full">
-		<Model_X />
-	</div>
-		<div class="snap-center w-full">
-			<HeroSection />
-		</div>
-		<div class="snap-center">
-			<ChargeSection />
-		</div>
-	</main>
+  <LandingHeader />
+  <main
+    class="snap-y snap-mandatory relative w-full h-screen overflow-auto scroll"
+  >
+    <div id="home" class="snap-center w-full">
+      <HeroSection />
+    </div>
+    <div id="cybertruck" class="snap-center w-full">
+      <Cybertruck />
+    </div>
+    <div id="model_3" class="snap-center w-full">
+      <Model_3 />
+    </div>
+    <div id="model_s" class="snap-center w-full">
+      <Model_S />
+    </div>
+    <div id="model_x" class="snap-center w-full">
+      <Model_X />
+    </div>
+    <div id="model_y" class="snap-center w-full">
+      <ModelY />
+    </div>
+    <div id="accessories" class="snap-center w-full">
+      <Accessories />
+    </div>
+    <div id="powerwall" class="snap-center w-full">
+      <Powerwall />
+    </div>
+    <div id="solarroof" class="snap-center w-full">
+      <SolarRoof />
+    </div>
+    <div id="solarpanel" class="snap-center w-full">
+      <SolarPanel />
+    </div>
+  </main>
 </Layout>
