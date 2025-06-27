@@ -1,0 +1,37 @@
+---
+import Section from "../components/Section.astro";
+---
+
+<Section
+  color="Black"
+  title="Model X"
+  subtitle="From $63,990"
+  subtitle2="Adter Est.Savings"
+  size="[24px]"
+  estilo="medium"
+>
+  <div slot="footer" class="gap-x-4 flex mx-auto">
+    <a
+      class="border-[3px] border-white bg-white text-bold text-[#393c41] rounded font-sm px-12 py-2 inline-block hover:bg-[#e2e3e3] hover:border-[#e2e3e3] transition-colors duration-300"
+      href="https://www.tesla.com/modelx/design#overview"
+      target="_blank"
+    >
+      Order Now
+    </a>
+
+    <a
+      class="bg-black text-bold rounded font-medium text-white px-12 py-2 inline-flex justify-center items-center transition-colors hover:bg-[#393c41]"
+      href="https://www.tesla.com/inventory/new/mx?arrangeby=savings&range=0"
+      target="_blank"
+    >
+      View inventory
+    </a>
+  </div>
+
+  <img
+    slot="background"
+    src="Model_X.avif"
+    alt="Model_X"
+    class="h-full w-full object-cover object-center"
+  />
+</Section>
