@@ -4,9 +4,8 @@
 
 ## 📸 Vista previa
 
-Incluye una imagen o GIF de demostración (coloca en `public/preview.png`):
-
-<img src="./public/page-cybertruck.png" alt="Cybertruck" width="300"/>
+<img src="public/page-cybertruck.png" alt="Cybertruck" width="700"/>
+<img src="public/page-solarpanels.png" alt="Cybertruck" width="700"/>
 
 ---
 
